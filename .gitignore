@@ -2,4 +2,6 @@
 !.gitignore
 !.vimrc
 !.vim/*
+!.oh-my-zsh/themes/*
 !.kde/share/apps/konsole
+!.zshrc

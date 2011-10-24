@@ -22,7 +22,7 @@ function virtualenv_info {
     [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
 }
 
-PROMPT="${PROMPT_STYLE}${PROMPT_BRACKET_BEGIN}${PROMPT_DIR}${PROMPT_BRACKET_END}${GIT_PROMPT_INFO}${GIT_PROMPT_STATUS}%{$reset_color%}:"
+PROMPT="${PROMPT_STYLE}${PROMPT_BRACKET_BEGIN}${PROMPT_DIR}${PROMPT_BRACKET_END}${GIT_PROMPT_INFO}${GIT_PROMPT_STATUS}%{$reset_color%} "
 #$(virtualenv_info)$(prompt_char)%{$reset_color%} "
 
 #RPROMPT='$(~/.rvm/bin/rvm-prompt)'

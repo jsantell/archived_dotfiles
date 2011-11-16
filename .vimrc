@@ -32,10 +32,16 @@ set incsearch
 " Language-specific
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
-let mapleader = ','
+let mapleader = ';'
+
+" JSHint
+highlight JSLintError ctermbg=235
+map <Leader>o :copen<cr>
+map <Leader>p :cclose<cr>
 
 " Remap Ack
 nnoremap <Leader>a :Ack
+" Nuke whitespace
 nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR> " Remap :W to strip EOL whitespace
 
 " NERDTree config

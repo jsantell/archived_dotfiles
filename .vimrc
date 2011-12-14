@@ -29,10 +29,20 @@ highlight SpecialKey ctermfg=235
 set hlsearch
 set incsearch
 
+let mapleader = ';'
+
 " Language-specific
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
-let mapleader = ';'
+" CoffeeScript
+autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+autocmd FileType coffee setl noexpandtab shiftwidth=2 tabstop=2
+" let coffee_make_options = 'src coffee/ js/'
+" au BufWritePost *.coffee silent CoffeeMake!
+hi link coffeeSpaceError NONE
+hi link coffeeSemicolonError NONE
+hi link coffeeReservedError NONE
+
 
 " JSHint
 highlight JSLintError ctermbg=235

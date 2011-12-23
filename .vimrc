@@ -1,7 +1,7 @@
 " Control
 set ts=4									" tabstop: Set tab size
 set sw=4									" shiftwidth: size in spaces of indentation
-set noexpandtab								" Do not convert tabs into spaces //WEBLINC
+set expandtab								" Do not convert tabs into spaces //WEBLINC
 set autoindent								" Set automatic indenting
 set backspace=2 							" Make backspace work like most other apps
 set backspace=indent,eol,start				" Intuitive backspacing
@@ -33,10 +33,11 @@ let mapleader = ';'
 
 " Language-specific
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType haml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " CoffeeScript
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
-autocmd FileType coffee setl noexpandtab shiftwidth=2 tabstop=2
+autocmd FileType coffee setl expandtab shiftwidth=2 tabstop=2
 " let coffee_make_options = 'src coffee/ js/'
 " au BufWritePost *.coffee silent CoffeeMake!
 hi link coffeeSpaceError NONE

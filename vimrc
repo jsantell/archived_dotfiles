@@ -1,3 +1,5 @@
+call pathogen#infect()
+
 " Control
 set ts=4                                    " tabstop: Set tab size
 set sw=4                                    " shiftwidth: size in spaces of indentation
@@ -58,11 +60,15 @@ au BufNewFile,BufRead .autotest                  set filetype=ruby
 au BufNewFile,BufRead *.erb,*.rhtml              set filetype=eruby
 
 " CoffeeScript
-au BufNewFile,BufRead *.coffee                   set filetype=ruby
+au BufNewFile,BufRead *.coffee                   set filetype=coffee
 
 " File type settings 
 autocmd FileType ruby  setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType eruby setlocal tabstop=2 shiftwidth=2
+autocmd FileType coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+hi link coffeeSpaceError NONE
+hi link coffeeSemicolonError NONE
+hi link coffeeReservedError NONE
 
 
 " *** Plugins/Mappings ***

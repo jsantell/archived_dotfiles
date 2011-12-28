@@ -1,27 +1,27 @@
 " Control
-set ts=4									" tabstop: Set tab size
-set sw=4									" shiftwidth: size in spaces of indentation
-set expandtab								" Do not convert tabs into spaces //WEBLINC
-set autoindent								" Set automatic indenting
-set backspace=2 							" Make backspace work like most other apps
-set backspace=indent,eol,start				" Intuitive backspacing
+set ts=4                                    " tabstop: Set tab size
+set sw=4                                    " shiftwidth: size in spaces of indentation
+set expandtab                               " Convert tabs into spaces
+set autoindent                              " Set automatic indenting
+set backspace=2                             " Make backspace work like most other apps
+set backspace=indent,eol,start              " Intuitive backspacing
 
 " Display
-syntax enable								" Set syntax highlighting
-set background=dark							" Set theme mode
-colorscheme acidcupcake						" Set theme
-let &t_Co=256								" Enable 256 colours
+syntax enable                               " Set syntax highlighting
+set background=dark                         " Set theme mode
+colorscheme acidcupcake                     " Set theme
+let &t_Co=256                               " Enable 256 colours
 hi CursorLine cterm=NONE ctermfg=NONE ctermbg=235 guibg=#222222
 
 filetype on
 filetype plugin on
 filetype indent on
 
-set number									" Show line numbers
-set ruler									" Show current position
-set cursorline								" Highlight current line
-set list									" Show hidden characetrs
-set listchars=tab:☆\ ,eol:¬					" Set hidden display characters
+set number                                  " Show line numbers
+set ruler                                   " Show current position
+set cursorline                              " Highlight current line
+set list                                    " Show hidden characetrs
+set listchars=tab:☆\ ,eol:¬                 " Set hidden display characters
 
 highlight NonText ctermfg=235
 highlight SpecialKey ctermfg=235
@@ -29,21 +29,46 @@ highlight SpecialKey ctermfg=235
 set hlsearch
 set incsearch
 
-let mapleader = ';'
 
-" Language-specific
-autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType haml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+" *** File Type Detection/Settings *** 
+
+
+" Ruby
+au BufNewFile,BufRead *.rb,*.rbw,*.gem,*.gemspec set filetype=ruby
+
+" Rakefile
+au BufNewFile,BufRead [rR]akefile,*.rake         set filetype=ruby
+
+" IRB config
+au BufNewFile,BufRead .irbrc,irbrc               set filetype=ruby
+
+" Rackup
+au BufNewFile,BufRead *.ru                       set filetype=ruby
+
+" Capistrano
+au BufNewFile,BufRead Capfile                    set filetype=ruby
+
+" Bundler
+au BufNewFile,BufRead Gemfile                    set filetype=ruby
+
+" Autotest
+au BufNewFile,BufRead .autotest                  set filetype=ruby
+
+" eRuby
+au BufNewFile,BufRead *.erb,*.rhtml              set filetype=eruby
 
 " CoffeeScript
-autocmd BufNewFile,BufRead *.coffee set filetype=coffee
-autocmd FileType coffee setl expandtab shiftwidth=2 tabstop=2
-" let coffee_make_options = 'src coffee/ js/'
-" au BufWritePost *.coffee silent CoffeeMake!
-hi link coffeeSpaceError NONE
-hi link coffeeSemicolonError NONE
-hi link coffeeReservedError NONE
+au BufNewFile,BufRead *.coffee                   set filetype=ruby
 
+" File type settings 
+autocmd FileType ruby  setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType eruby setlocal tabstop=2 shiftwidth=2
+
+
+" *** Plugins/Mappings ***
+
+
+let mapleader = ';'
 
 " JSHint
 highlight JSLintError ctermbg=235
@@ -56,12 +81,11 @@ nnoremap <Leader>a :Ack
 nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR> " Remap :W to strip EOL whitespace
 
 " NERDTree config
-map <Leader>q :NERDTreeToggle<CR>			" Map :n to toggle tree nav
+map <Leader>q :NERDTreeToggle<CR>           " Map :n to toggle tree nav
 
 " Command-T configuration
-nnoremap <silent> <Leader>w :CommandT<CR>
 let g:CommandTMaxHeight=20
-let g:CommandTCancelMap=',w'
+nnoremap <silent> <Leader>w :CommandT <CR>
 
 " Tab mappings
 map <Leader>tt :tabnew<cr>

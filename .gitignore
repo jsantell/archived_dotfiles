@@ -1,7 +1,0 @@
-*
-!.gitignore
-!.vimrc
-!.vim/*
-!.oh-my-zsh/*
-!.kde/share/apps/konsole
-!.zshrc

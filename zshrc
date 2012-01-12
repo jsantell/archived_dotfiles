@@ -30,7 +30,10 @@ source $ZSH/oh-my-zsh.sh
 alias g='git'
 alias gpu='git stash && git pull origin && git stash pop'
 alias gs='git status'
+alias ga='git add'
 alias gc='git commit'
+alias gp='git push'
+
 # Customize to your needs...
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/jsantell/Scripts
 

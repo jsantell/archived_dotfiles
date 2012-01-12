@@ -56,16 +56,26 @@ au BufNewFile,BufRead Gemfile                    set filetype=ruby
 " Autotest
 au BufNewFile,BufRead .autotest                  set filetype=ruby
 
+" Haml
+au BufNewFile,BufRead *.haml                     set filetype=haml
+
 " eRuby
 au BufNewFile,BufRead *.erb,*.rhtml              set filetype=eruby
 
 " CoffeeScript
 au BufNewFile,BufRead *.coffee                   set filetype=coffee
 
+" Cold Fusion [bleh]
+au BufNewFile,BufRead *.cfm                      set filetype=html
+
 " File type settings 
+
 autocmd FileType ruby  setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType html  setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 autocmd FileType eruby setlocal tabstop=2 shiftwidth=2
 autocmd FileType coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+
 hi link coffeeSpaceError NONE
 hi link coffeeSemicolonError NONE
 hi link coffeeReservedError NONE

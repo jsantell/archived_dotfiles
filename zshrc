@@ -25,6 +25,11 @@ plugins=(git git-flow rails ruby brew gem github osx)
 unsetopt promptcr
 source $ZSH/oh-my-zsh.sh
 
+# Aliases
+alias g='git'
+alias gpu='git stash && git pull origin && git stash pop'
+alias gs='git status'
+alias gc='git commit'
 # Customize to your needs...
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/jsantell/Scripts
 

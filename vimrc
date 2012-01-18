@@ -31,6 +31,9 @@ highlight SpecialKey ctermfg=235
 set hlsearch
 set incsearch
 
+" Enable per-project settings
+set exrc
+set secure
 
 " *** File Type Detection/Settings *** 
 

@@ -36,6 +36,10 @@ alias gp='git push'
 
 # Customize to your needs...
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/jsantell/Scripts
+export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
+
+# Set vim for command line
+set -o vi
 
 # This loads RVM into a shell session.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 

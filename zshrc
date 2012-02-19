@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="j"
+ZSH_THEME="cupcake"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -37,6 +37,12 @@ alias gp='git push'
 # Customize to your needs...
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/jsantell/Scripts
 export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
+
+# Android SDK Bullshit
+export PATH=~/bin/android-sdk-macosx-platform-tools:~/bin/android-sdk-macosx/platforms:~/bin/android-sdk-macosx/tools:$PATH
+
+
+
 
 # Set vim for command line
 set -o vi

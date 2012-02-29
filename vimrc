@@ -11,7 +11,7 @@ set backspace=indent,eol,start              " Intuitive backspacing
 " Display
 syntax enable                               " Set syntax highlighting
 set background=dark                         " Set theme mode
-colorscheme acidcupcake                     " Set theme
+colorscheme AcidCupcakeColourScheme/acidcupcake                     " Set theme
 let &t_Co=256                               " Enable 256 colours
 hi CursorLine cterm=NONE ctermfg=NONE ctermbg=235 guibg=#222222
 

@@ -1,0 +1,15 @@
+[submodule "vim/bundle/Command-T"]
+    path = vim/bundle/Command-T
+    url = git://github.com/wincent/Command-T.git
+[submodule "vim/bundle/jshint.vim"]
+    path = vim/bundle/jshint.vim
+    url = git://github.com/wookiehangover/jshint.vim.git
+[submodule "vim/bundle/vim-coffee-script"]
+    path = vim/bundle/vim-coffee-script
+    url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "vim/bundle/nerdtree"]
+    path = vim/bundle/nerdtree
+    url = git://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/AcidCupcakeColourScheme"]
+    path = vim/bundle/AcidCupcakeColourScheme
+    url = git://github.com/jsantell/AcidCupcakeColourScheme

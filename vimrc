@@ -60,10 +60,10 @@ au BufNewFile,BufRead Gemfile                    set filetype=ruby
 au BufNewFile,BufRead .autotest                  set filetype=ruby
 
 " Haml
-au BufNewFile,BufRead *.haml                     set filetype=haml
+au BufNewFile,BufRead *.haml,*.jade              set filetype=haml
 
-" eRuby
-au BufNewFile,BufRead *.erb,*.rhtml              set filetype=eruby
+" eRuby/ejs
+au BufNewFile,BufRead *.rjs,*.erb,*.rhtml        set filetype=eruby
 
 " CoffeeScript
 au BufNewFile,BufRead *.coffee                   set filetype=coffee

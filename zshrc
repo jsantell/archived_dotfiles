@@ -28,11 +28,12 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias g='git'
-alias gpu='git stash && git pull origin && git stash pop'
+alias gpu='git stash && git pull --rebase && git stash pop'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
+alias gpom='git push origin master'
 
 # Customize to your needs...
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/jsantell/Scripts
@@ -47,5 +48,7 @@ export PATH=~/bin/android-sdk-macosx-platform-tools:~/bin/android-sdk-macosx/pla
 # Set vim for command line
 set -o vi
 
+# Autoload project specific rvmrc
+# rvm_project_rvmrc=1
 # This loads RVM into a shell session.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 

@@ -12,4 +12,7 @@
 	url = git://github.com/scrooloose/nerdtree.git
 [submodule "vim/colors/AcidCupcakeColourScheme"]
 	path = vim/colors/AcidCupcakeColourScheme
-	url = git://github.com/jsantell/AcidCupcakeColourScheme
+    url = git://github.com/jsantell/AcidCupcakeColourScheme
+[submodule "vim/bundle/fugitive"]
+	path = vim/bundle/fugitive
+	url = git://github.com/tpope/vim-fugitive.git

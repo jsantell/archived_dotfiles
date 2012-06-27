@@ -35,12 +35,12 @@ alias gc='git commit'
 alias gp='git push'
 alias gpom='git push origin master'
 
-# Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/jsantell/Scripts
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:~/.bin:$PATH
 export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
 
 # Android SDK Bullshit
-export PATH=~/bin/android-sdk-macosx-platform-tools:~/bin/android-sdk-macosx/platforms:~/bin/android-sdk-macosx/tools:$PATH
+export PATH=~/bin/android-sdk-macosx-platform-tools:~/bin/android-sdk-macosx/platforms:~/bin/android-sdk-macosx/tools:~/bin/android-sdk-macosx/platform-tools/:$PATH
+export PATH=~/.gem/ruby/1.8/bin:$PATH
 
 
 

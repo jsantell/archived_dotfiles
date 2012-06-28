@@ -31,6 +31,8 @@ highlight SpecialKey ctermfg=235
 set hlsearch
 set incsearch
 
+set laststatus=2
+
 " Enable per-project settings
 set exrc
 set secure
@@ -88,6 +90,9 @@ hi link coffeeReservedError NONE
 
 
 let mapleader = ';'
+
+" vim Powerline
+let g:Powerline_symbols = 'fancy'
 
 " JSHint
 highlight JSLintError ctermbg=235

@@ -35,7 +35,7 @@ alias gc='git commit'
 alias gp='git push'
 alias gpom='git push origin master'
 
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:~/.bin:$PATH
+export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:~/.bin
 export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
 
 # Android SDK Bullshit
@@ -52,3 +52,4 @@ set -o vi
 # rvm_project_rvmrc=1
 # This loads RVM into a shell session.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+rvm use default

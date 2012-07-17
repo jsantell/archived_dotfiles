@@ -1,0 +1,123 @@
+#!/bin/bash
+# jsantell 8/23/11
+
+# Uses env variables CFNUKE_all and CFNUKE_FP for passwords
+
+# Ex windows usage: (ESCAPE YOUR \\)
+# DEV_PATH="C:\\Users\\jsantell\\Dev\\"
+#
+# Don't forget trailing directory slashes
+
+TMP_PATH="/Users/jsantell/Dev/tmp/"
+DEV_PATH="/Users/jsantell/Dev/"
+CF_PATH="/Applications/ColdFusion9/bin/coldfusion"
+
+USAGE="OPTIONS:\n
+    [-h]        Show help\n
+    [-d DIR]    Delete DIR/fusebox/public/parsed/*\n
+    [-r DIR]    Reparse, reset app/asset packages local.DIR.weblinc.com\n
+    [-m DIR]    DBMigrate local.DIR.weblinc.com\n
+	[-c]        Coldfusion restart (UNIX only)\n"
+
+while getopts ":d:r:mc" opt; do
+    case $opt in
+        d)
+            DELETE_FOLDER=$OPTARG
+            ;;
+        r)
+            REPARSE=$OPTARG
+            ;;
+        m)
+            DBMIGRATE=$OPTARG
+            ;;
+        c)
+            CFRESTART=1
+            ;;
+        h)
+            echo -e $USAGE
+            exit 1
+            ;;
+        \?)
+            echo -e $USAGE
+            exit 1
+            ;;
+        :)
+            echo -e "Option -$OPTARG requires an argument."
+            exit 1
+            ;;
+    esac
+done
+
+
+if [ `uname -s` == "Darwin" ]
+	then SLASH="/"
+	else SLASH="\\"
+fi
+
+function runTask {
+	# Save status and results
+	RUN_CMD="curl -D $TMP_PATH""taskStatus -o $TMP_PATH$2""Result -s $3"
+	$RUN_CMD
+	CHECK_STATUS="head -n 1 $TMP_PATH""taskStatus"
+	STATUS=`$CHECK_STATUS`
+
+	# Handle the result
+	if [[ `expr "$STATUS" : '.*200 OK'` -gt 0 ]]
+		then echo Task: $1 - completed succesfully.
+	else
+	    echo Task: $1 - errors reported.
+
+		LOG="cat $TMP_PATH$2Result"
+        READ_NEXT_LINE=0
+
+        $LOG | while read LINE ;
+        do
+            if [[ $READ_NEXT_LINE -eq 1 ]]; then
+                echo "COLDFUSION ERROR: $LINE"
+                READ_NEXT_LINE=0
+            fi
+            if [[ `expr "$LINE" : '<h1'` -gt 0 ]]; then
+                READ_NEXT_LINE=1
+            fi
+        done
+
+
+		exit 1
+	fi
+}
+
+
+# DELETE PARSED FOLDER
+if [[ -n $DELETE_FOLDER ]]; then
+
+	NUKE_PATH="$DEV_PATH$DELETE_FOLDER$SLASH""fusebox""$SLASH""public""$SLASH""parsed"
+    echo "Nuking: $NUKE_PATH"
+    `rm $NUKE_PATH$SLASH*`
+    FILES_REMAINING=`ls -l $NUKE_PATH | wc -l`
+    echo "Files in $NUKE_PATH: $FILES_REMAINING"
+fi
+
+# REPARSE, RESET APPLICATION, RESET ASSET PACKAGING
+if [[ -n $REPARSE ]]; then
+    PASSWORD=$CFNUKE_all
+    if [[ $REPARSE == 'freepeople' ]]; then
+        PASSWORD=$CFNUKE_FP
+    fi
+
+    SITE_URL="http://local.$REPARSE.weblinc.com"
+    runTask 'Reparse Fuseactions'       'reparse'       "$SITE_URL/index.cfm?fusebox.password=$PASSWORD&fusebox.load=true&fusebox.parse=true&fusebox.execute=false&fuseaction=content.homePage"
+    runTask 'Reparse Admin Fuseactions' 'reparse'       "$SITE_URL/admin/index.cfm?fusebox.password=$PASSWORD&fusebox.load=true&fusebox.parse=true&fusebox.execute=false&fuseaction=login.loginForm"
+    runTask 'Application Reset'         'reset'         "$SITE_URL/index.cfm?fusebox.password=$PASSWORD&wl.reload=true&resetApplication=1"
+    runTask 'Asset Packaging'           'packageAssets' "$SITE_URL/index.cfm?resetAssetPackages=true"
+fi
+
+# DBMIGRATE
+if [[ -n $DBMIGRATE ]]; then
+    SITE_URL="http://local.$DBMIGRATE.weblinc.com"
+    runTask 'Database Migration'        'migration'     "$SITE_URL/index.cfm?dbMigrate=true"
+fi
+
+# COLDFUSION RESTART
+if [[ -n $CFRESTART ]]; then
+    sudo $CF_PATH restart
+fi

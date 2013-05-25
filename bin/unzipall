@@ -1,0 +1,5 @@
+#!/bin/bash
+mkdir -p $2
+for i in $( ls $1 ); do
+  unzip $1/$i -d $2/$i
+done

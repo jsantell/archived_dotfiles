@@ -1,0 +1,2 @@
+#!/bin/sh
+cfx testall -b /Applications/FirefoxNightly.app -v -o

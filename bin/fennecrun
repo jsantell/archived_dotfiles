@@ -1,0 +1,2 @@
+#!/bin/sh
+cfx run -a fennec-on-device -b ~/.bin/android-sdk-macosx/platform-tools/adb --mobile-app fennec --force-mobile

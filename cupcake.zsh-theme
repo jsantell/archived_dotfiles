@@ -12,7 +12,7 @@ PROMPT_SEPARATOR='%{$reset_color%}:'
 PROMPT_DIR='%{$fg[blue]%}%~'
 PROMPT_BRACKET_END='%{$fg[white]%}]'
 PROMPT_SIGN='%{$reset_color%}%#'
-RVM_PROMPT='$(rvm_ruby_prompt)'
+RVM_PROMPT=''
 GIT_PROMPT_INFO='$(git_prompt_info)'
 GIT_PROMPT_STATUS='$(git_prompt_status)'
 

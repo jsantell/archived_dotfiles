@@ -1,1 +1,1 @@
-/*jshint forin:true, eqnull:true, noarg:true, noempty:true, eqeqeq:true, strict:true, undef:true, unused:true, curly:true, browser:true, esnext:true, moz:true, node:true, indent:4, maxerr:50 */
+/*jshint forin:true, eqnull:true, noarg:true, noempty:true, eqeqeq:true, strict:true, undef:true, unused:true, curly:true, browser:true, esnext:true, moz:true, node:true, indent:2, maxerr:50, -W064, -W089 */

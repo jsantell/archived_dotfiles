@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cfx testall -a fennec-on-device -b adb --mobile-app fennec --force-mobile -o -vf $1:$2

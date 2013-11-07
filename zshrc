@@ -9,6 +9,8 @@ autoload -U compinit && compinit # git autocompletion
 unsetopt promptcr
 source $ZSH/oh-my-zsh.sh
 
+export FIREFOX=/Applications/FirefoxAurora.app/Contents/MacOS/firefox
+
 # Aliases
 alias g='git'
 alias gpu='git stash && git pull --rebase && git stash pop'
@@ -18,11 +20,13 @@ alias gc='git commit'
 alias gp='git push'
 alias gpom='git push origin master'
 
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin::/usr/local/git/bin
 export PATH=/usr/local/share/npm/bin/:$PATH
 export PATH=/Users/jsantell/.bin/:$PATH
 export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
 
+# Use Homebrew Python
+alias python='/usr/local/bin/python2'
 
 export PATH=~/.gem/ruby/1.8/bin:$PATH
 
@@ -31,7 +35,3 @@ export PATH=~/.bin/android-sdk-macosx-platform-tools:~/.bin/android-sdk-macosx/p
 
 # Set vim for command line
 set -o vi
-
-# Add rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"

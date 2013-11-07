@@ -1,0 +1,8 @@
+#!/bin/bash
+AVD=jetpack
+SDCARD=~/jetpacksdcard.img
+EMULATOR=~/.bin/android-sdk-macosx/sdk/tools/emulator
+
+$EMULATOR -avd $AVD -sdcard $SDCARD \
+-no-boot-anim \
+&

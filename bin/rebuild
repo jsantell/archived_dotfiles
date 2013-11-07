@@ -1,0 +1,12 @@
+#!/bin/sh
+pushd .;
+cd ~/Dev/mozilla-central/obj-ff-dbg;
+ALL="echo"
+for var in "$@"
+do
+  ALL="$ALL && make -C $var"
+done
+time(
+  eval "$ALL && make -s -C layout/build && make -s -C toolkit/library && make -C browser/app"
+)
+popd;

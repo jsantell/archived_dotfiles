@@ -1,0 +1,8 @@
+#!/bin/bash
+ADDON_SDK=~/Dev/addon-sdk
+MOZILLA_CENTRAL=~/Dev/fx-team
+rm -r $MOZILLA_CENTRAL/addon-sdk/source/*
+cp -r $ADDON_SDK/* $MOZILLA_CENTRAL/addon-sdk/source/
+# Remove doc and tests
+rm -r $MOZILLA_CENTRAL/addon-sdk/source/doc
+rm -r $MOZILLA_CENTRAL/addon-sdk/source/test

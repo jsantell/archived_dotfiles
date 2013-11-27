@@ -1,0 +1,11 @@
+#!/bin/sh
+# 
+# Examples:
+# $ replace foo bar
+# $ replace underscore lodash *.js
+
+if [ -z "$3" ]; then
+  find . -type f -print0 | xargs -0 sed -i '' "s/$1/$2/g"
+else
+  find . -name "$3" -type f -print0 | xargs -0 sed -i '' "s/$1/$2/g"
+fi

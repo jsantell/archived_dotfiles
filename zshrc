@@ -10,6 +10,7 @@ unsetopt promptcr
 source $ZSH/oh-my-zsh.sh
 
 export FIREFOX=/Applications/FirefoxAurora.app/Contents/MacOS/firefox
+export JETPACK_ROOT=/Users/jsantell/Dev/addon-sdk
 
 # Aliases
 alias g='git'
@@ -20,9 +21,10 @@ alias gc='git commit'
 alias gp='git push'
 alias gpom='git push origin master'
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin::/usr/local/git/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
 export PATH=/usr/local/share/npm/bin/:$PATH
-export PATH=/Users/jsantell/.bin/:$PATH
+export PATH=~/.bin/:$PATH
+export PATH=~/.bin/moz-git-tools/:$PATH
 export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
 
 # Use Homebrew Python
@@ -35,3 +37,16 @@ export PATH=~/.bin/android-sdk-macosx-platform-tools:~/.bin/android-sdk-macosx/p
 
 # Set vim for command line
 set -o vi
+
+#### NVM ####
+
+# {{{
+# Node Completion - Auto-generated, do not touch.
+# shopt -s progcomp
+for f in $(command ls ~/.node-completion); do
+  f="$HOME/.node-completion/$f"
+  test -f "$f" && . "$f"
+done
+# }}}
+
+[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM

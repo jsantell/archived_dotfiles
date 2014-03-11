@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Pop a few times to make sure there's nothing else on the stack
+hg qpop
+hg qpop
+hg qpop
+
+# Pull in the patch
+hg qimport $1
+
+# Apply the patch
+hg qpush
+
+# Name of the commit for the try message, doesn't really matter, automatically applies/qpushs
+hg qnew try-commit
+hg qref --message "try: -b o -p linux,linux64,macosx64,win32 -u mochitests -t none."
+hg push -f try
+hg qpop
+hg qpop
+

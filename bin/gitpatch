@@ -1,2 +1,2 @@
 #!/bin/sh
-git format-patch master --stdout > $1.patch
+git format-patch -U8 fx-team --stdout > $1.patch

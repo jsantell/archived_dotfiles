@@ -4,6 +4,10 @@
 hg qpop
 hg qpop
 hg qpop
+hg qpop
+
+# I hate state
+rm -r .hg/patches
 
 # Pull in the patch
 hg qimport $1
@@ -13,7 +17,13 @@ hg qpush
 
 # Name of the commit for the try message, doesn't really matter, automatically applies/qpushs
 hg qnew try-commit
-hg qref --message "try: -b o -p linux,linux64,macosx64,win32 -u mochitests -t none."
+# Most tests
+#hg qref --message "try: -b do -p linux,macosx64,win32 -u xpcshell,mochitests -t none"
+# Jetpack on Windows
+#hg qref --message "try: -b o -p win32 -u jetpack[Windows XP] -t none"
+# DevTools
+hg qref --message "try: -b do -p linux,macosx64,win32 -u mochitest-dt -t none"
+#hg qref --message "try: -b do -p macosx64 -u mochitest-dt -t none"
 hg push -f try
 hg qpop
 hg qpop

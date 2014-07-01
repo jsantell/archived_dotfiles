@@ -1,0 +1,10 @@
+export GOPATH=~/Dev/go
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/go/bin
+export PATH=/usr/local/share/npm/bin/:$PATH
+export PATH=~/bin/:$PATH
+export PATH=~/bin/moz-git-tools/:$PATH
+export PATH=/usr/local/lib/node:/usr/local/lib/node_modules:$PATH
+export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
+
+# Android SDK Bullshit
+export PATH=~/bin/android-sdk-macosx-platform-tools:~/bin/android-sdk-macosx/platforms:~/bin/android-sdk-macosx/tools:~/bin/android-sdk-macosx/platform-tools/:$PATH

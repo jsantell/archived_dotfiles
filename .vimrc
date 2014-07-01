@@ -1,3 +1,4 @@
+set nocp
 call pathogen#infect()
 
 " Control
@@ -9,11 +10,11 @@ set backspace=2                             " Make backspace work like most othe
 set backspace=indent,eol,start              " Intuitive backspacing
 
 " Display
+let g:solarized_termcolors=16               " Weirdness with iterm2: http://stackoverflow.com/a/7278548/1785755
 syntax enable                               " Set syntax highlighting
 set background=dark                         " Set theme mode
-colorscheme AcidCupcakeColourScheme/acidcupcake                     " Set theme
+colorscheme solarized
 let &t_Co=256                               " Enable 256 colours
-hi CursorLine cterm=NONE ctermfg=NONE ctermbg=235 guibg=#222222
 
 filetype on
 filetype plugin on
@@ -24,9 +25,6 @@ set ruler                                   " Show current position
 set cursorline                              " Highlight current line
 set list                                    " Show hidden characetrs
 set listchars=tab:☆\ ,eol:¬                 " Set hidden display characters
-
-highlight NonText ctermfg=235
-highlight SpecialKey ctermfg=235
 
 set hlsearch
 set incsearch
@@ -72,6 +70,9 @@ au BufNewFile,BufRead *.coffee                   set filetype=coffee
 
 " Cold Fusion [bleh]
 au BufNewFile,BufRead *.cfm                      set filetype=html
+
+" JS
+au BufNewFile,BufRead *.jsm                      set filetype=js
 
 " File type settings 
 

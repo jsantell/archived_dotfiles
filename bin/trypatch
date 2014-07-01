@@ -23,7 +23,6 @@ hg qnew try-commit
 #hg qref --message "try: -b o -p win32 -u jetpack[Windows XP] -t none"
 # DevTools
 hg qref --message "try: -b do -p linux,macosx64,win32 -u mochitest-dt -t none"
-#hg qref --message "try: -b do -p macosx64 -u mochitest-dt -t none"
 hg push -f try
 hg qpop
 hg qpop

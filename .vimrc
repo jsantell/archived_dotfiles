@@ -23,7 +23,7 @@ filetype indent on
 set number                                  " Show line numbers
 set ruler                                   " Show current position
 set cursorline                              " Highlight current line
-set list                                    " Show hidden characetrs
+" set list                                    " Show hidden characetrs
 set listchars=tab:☆\ ,eol:¬                 " Set hidden display characters
 
 set hlsearch

@@ -1,0 +1,2 @@
+#!/bin/bash
+~/Dev/gecko-dev/mach mochitest-devtools browser/devtools/webaudioeditor

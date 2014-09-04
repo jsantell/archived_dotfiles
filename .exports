@@ -6,5 +6,6 @@ export PATH=~/bin/moz-git-tools/:$PATH
 export PATH=/usr/local/lib/node:/usr/local/lib/node_modules:$PATH
 export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
 
-# Android SDK Bullshit
-export PATH=~/bin/android-sdk-macosx-platform-tools:~/bin/android-sdk-macosx/platforms:~/bin/android-sdk-macosx/tools:~/bin/android-sdk-macosx/platform-tools/:$PATH
+# Android SDK
+export PATH=~/bin/android-sdk-macosx/sdk/platform-tools/:$PATH
+export PATH=~/bin/android-sdk-macosx/sdk/tools/:$PATH

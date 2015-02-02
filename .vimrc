@@ -23,7 +23,7 @@ filetype indent on
 set number                                  " Show line numbers
 set ruler                                   " Show current position
 set cursorline                              " Highlight current line
-" set list                                    " Show hidden characetrs
+set list                                    " Show hidden characetrs
 set listchars=tab:☆\ ,eol:¬                 " Set hidden display characters
 
 set hlsearch
@@ -77,7 +77,7 @@ au BufNewFile,BufRead *.jsm                      set filetype=js
 " File type settings 
 
 autocmd FileType ruby  setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType html  setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+autocmd FileType html  setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType eruby setlocal tabstop=2 shiftwidth=2
 autocmd FileType coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab

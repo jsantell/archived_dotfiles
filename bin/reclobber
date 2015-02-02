@@ -1,0 +1,6 @@
+#!/bin/sh
+touch obj.noindex/CLOBBER
+touch configure
+touch js/src/configure
+touch obj.noindex/config.status
+touch obj.noindex/js/src/config.status

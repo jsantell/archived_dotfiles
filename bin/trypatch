@@ -11,7 +11,6 @@ rm -r .hg/patches
 
 # Pull in the patch
 hg qimport $1
-
 # Apply the patch
 hg qpush
 
@@ -22,9 +21,9 @@ hg qnew try-commit
 # Jetpack on Windows
 #hg qref --message "try: -b o -p win32 -u jetpack[Windows XP] -t none"
 # DevTools
-#hg qref --message "try: -b do -p linux,macosx64,win32 -u mochitest-dt -t none"
+hg qref --message "try: -b do -p linux,macosx64,win32 -u mochitest-dt -t none"
 # DevTools with xpcshell
-hg qref --message "try: -b do -p linux,macosx64,win32 -u mochitest-dt,xpcshell -t none"
+# hg qref --message "try: -b do -p linux,macosx64,win32 -u mochitest-dt,xpcshell -t none"
 # e10s
 # hg qref --message "try: -b o -p linux,linux64,linux64-asan -u mochitests[Ubuntu] -t none"
 hg push -f try

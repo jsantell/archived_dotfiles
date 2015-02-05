@@ -3,7 +3,7 @@
 cutstring="DO NOT EDIT BELOW THIS LINE"
 
 # Move Pathogen
-ln -s $PWD/vim/pathogen/autoload/pathogen.vim $PWD/vim/autoload/pathogen.vim
+ln -s $PWD/.vim/pathogen/autoload/pathogen.vim $PWD/.vim/autoload/pathogen.vim
 
 for name in *; do
   target="$HOME/.$name"

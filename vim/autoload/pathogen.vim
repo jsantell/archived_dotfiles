@@ -1,1 +1,0 @@
-/Users/jsantell/Dev/home/vim/pathogen/autoload/pathogen.vim

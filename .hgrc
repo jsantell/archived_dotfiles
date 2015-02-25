@@ -1,0 +1,22 @@
+[ui]
+username = Jordan Santell <jsantell@mozilla.com>
+ssh = ssh -i ~/.ssh/id_rsa_moz
+
+[defaults]
+qnew = -Ue
+qseries = -v
+diff = -p -U 8
+qdiff = -p -U 8
+qref = -U
+
+[extensions]
+mq =
+
+[paths]
+try = ssh://hg.mozilla.org/try
+holly = ssh://hg.mozilla.org/projects/holly
+
+[diff]
+git = 1
+showfunc = 1
+unified = 8

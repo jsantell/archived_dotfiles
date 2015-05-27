@@ -15,6 +15,7 @@ mq =
 [paths]
 try = ssh://hg.mozilla.org/try
 holly = ssh://hg.mozilla.org/projects/holly
+fx-team = ssh://hg.mozilla.org/integration/fx-team
 
 [diff]
 git = 1

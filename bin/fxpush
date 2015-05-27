@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# Pop a few times to make sure there's nothing else on the stack
+hg qpop
+hg qpop
+hg qpop
+hg qpop
+
+hg pull -u
+
+# I hate state
+rm -r .hg/patches
+
+# Pull in the patch
+hg qimport $1
+# Apply the patch
+hg qpush
+
+# move applied patch to the repo
+hg qfinish -a
+
+hg push fx-team
+
+### IF FAILS DO THIS STUFF
+
+## converts change and moves from repo back into the queue
+# hg qimport -r tip
+## Then pop off the patch from the queue
+hg qpop
+## Then just delete everything, scorch the earth, may no one ever know
+## what we've done on this day
+rm -r .hg/patches

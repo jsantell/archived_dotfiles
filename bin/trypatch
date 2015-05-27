@@ -21,7 +21,9 @@ hg qnew try-commit
 # Jetpack on Windows
 #hg qref --message "try: -b o -p win32 -u jetpack[Windows XP] -t none"
 # DevTools
-hg qref --message "try: -b do -p linux,macosx64,win32 -u mochitest-dt -t none"
+hg qref --message "try: -b do -p linux,macosx64,win32 -u mochitest-dt,mochitest-e10s-devtools-chrome -t none"
+# Platform
+# hg qref --message "try: -b do -p all -u all[Ubuntu,-x64] -t none"
 # DevTools with xpcshell
 # hg qref --message "try: -b do -p linux,macosx64,win32 -u mochitest-dt,xpcshell -t none"
 # e10s

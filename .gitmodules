@@ -25,3 +25,6 @@
 [submodule ".vim/bundle/rust.vim"]
 	path = .vim/bundle/rust.vim
 	url = git://github.com/rust-lang/rust.vim.git
+[submodule "bin/git-cinnabar"]
+	path = bin/git-cinnabar
+	url = git@github.com:glandium/git-cinnabar.git

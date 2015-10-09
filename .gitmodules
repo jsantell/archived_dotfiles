@@ -19,9 +19,6 @@
 [submodule ".vim/bundle/jade"]
 	path = .vim/bundle/jade
 	url = git://github.com/digitaltoad/vim-jade.git
-[submodule "bin/moz-git-tools"]
-	path = bin/moz-git-tools
-	url = git://github.com/mozilla/moz-git-tools.git
 [submodule ".vim/bundle/go-vim"]
 	path = .vim/bundle/go-vim
 	url = git://github.com/fatih/vim-go.git

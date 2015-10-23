@@ -1,0 +1,5 @@
+#!/bin/sh
+
+git commit --allow-empty --message "try: -b do -p linux,macosx64,win32 -u mochitest-dt,mochitest-e10s-devtools-chrome,xpcshell -t none"
+git push try
+git reset --hard HEAD^1

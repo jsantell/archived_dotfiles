@@ -1,2 +1,2 @@
 #!/bin/sh
-git format-patch -M70% -U8 fx-team --stdout > $1.patch
+git format-patch -M70% -U8 fx-team/branches/default/tip --stdout > $1.patch

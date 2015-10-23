@@ -142,6 +142,7 @@ alias gc='git commit'
 alias gp='git push'
 alias gpom='git push origin master'
 alias gtry='git push-to-try ~/Dev/mozilla-central -b o -p linux,linux64,macosx64,win32,android,unagi,linux_gecko -u xpcshell,mochitests -t none'
+git config --global alias.fxnew '!f(){ git checkout -b $1 fx-team/branches/default/tip; }; f'
 
 # Turn git diff into hg patch
 alias hg-diff='git diff -U8 --patience -M -C'

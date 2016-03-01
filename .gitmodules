@@ -28,3 +28,6 @@
 [submodule "bin/git-cinnabar"]
 	path = bin/git-cinnabar
 	url = git@github.com:glandium/git-cinnabar.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git

@@ -1,2 +1,0 @@
-#!/bin/bash
-cfx test -v -o -b /Applications/FirefoxNightly.app -f $1:$2

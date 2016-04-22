@@ -72,7 +72,7 @@ au BufNewFile,BufRead *.coffee                   set filetype=coffee
 au BufNewFile,BufRead *.cfm                      set filetype=html
 
 " JS
-au BufNewFile,BufRead *.jsm                      set filetype=js
+au BufNewFile,BufRead *.jsm                      set filetype=javascript
 
 " File type settings 
 
@@ -123,3 +123,13 @@ map <Leader>th :tabfirst<cr>
 map <Leader>tl :tablast<cr>
 map <Leader>tm :tabmove<cr>
 
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_javascript_checkers = ['eslint']
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_loc_list_height = 1
